@@ -3,7 +3,7 @@ import numpy as np
 import face_recognition
 
 imgIsa = face_recognition.load_image_file('ImagesBasic/Isa.jpg')
-imgIsa_test = face_recognition.load_image_file('ImagesBasic/Isa_test.jpg')
+imgIsa_test = face_recognition.load_image_file('ImagesBasic/Rock.jpg')
 
 # Сохраните оригинальные цветные изображения
 imgIsa_color = cv2.cvtColor(imgIsa, cv2.COLOR_BGR2RGB)
@@ -30,7 +30,7 @@ cv2.rectangle(imgIsa_test_color, (faceLocation_test[3], faceLocation_test[0]), (
 
 #compare two images by encoding
 results = face_recognition.compare_faces([encodeIsa], encodeIsa_test)
-#print(f"results = {results}")
+print(f"results = {results}")
 # results = [True]   #result True show us that both encoding to be similar
 
 # for finding how much they similar to each other we should find distance
